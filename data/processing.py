@@ -369,14 +369,35 @@ df_reordered.to_csv(output_file_path, index=False)
 print(f"Reordered file saved to: {output_file_path}")
 
 
-# In[ ]:
 
 
+import pandas as pd
+
+# Load the data from the uploaded file
+file_path = '10_input_BHSI.csv'
+data = pd.read_csv(file_path)
+
+# Function to split the dataset into two sets based on size L
+def split_dataset(data, L):
+    # Validate L
+    if L <= 0 or L > len(data):
+        raise ValueError("L must be greater than 0 and less than or equal to the number of rows in the dataset.")
+
+    # Create two sets
+    first_set = data.iloc[:L]
+    second_set = data.iloc[L-1:]
+
+    return first_set, second_set
 
 
+# Example usage:
+# Replace 'L' with your desired size of the first set
+L = ???? # Example value. In my paper, L=500.
+first_set, second_set = split_dataset(data, L)
 
-# In[ ]:
+# Save the two sets to separate files for verification
+first_set.to_csv('split/trial2/training_set.csv', index=False)
+second_set.to_csv('split/trial2/test_set.csv', index=False)
 
-
-
-
+print("First set saved to 'training_set.csv'")
+print("Second set saved to 'test_set.csv'")
