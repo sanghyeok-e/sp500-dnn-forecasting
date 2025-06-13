@@ -348,7 +348,7 @@ removed_rows.to_csv(removed_rows_file_path, index=False)
 edited_file_path, removed_rows_file_path
 
 
-# In[ ]:
+
 
 
 import pandas as pd
@@ -369,10 +369,13 @@ df_reordered.to_csv(output_file_path, index=False)
 print(f"Reordered file saved to: {output_file_path}")
 
 
+<<<<<<< HEAD
 
 
 import pandas as pd
 
+=======
+>>>>>>> 34dedd5 (add updated folder 'src')
 # Load the data from the uploaded file
 file_path = '10_input_BHSI.csv'
 data = pd.read_csv(file_path)
@@ -400,4 +403,8 @@ first_set.to_csv('split/trial2/training_set.csv', index=False)
 second_set.to_csv('split/trial2/test_set.csv', index=False)
 
 print("First set saved to 'training_set.csv'")
+<<<<<<< HEAD
 print("Second set saved to 'test_set.csv'")
+=======
+print("Second set saved to 'test_set.csv'")
+>>>>>>> 34dedd5 (add updated folder 'src')
